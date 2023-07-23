@@ -15,12 +15,14 @@ import java.time.LocalDateTime;
 @Setter
 public class ProfileEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     @Column(name = "name")
     private String name;
     @Column(name = "surname")
     private String surname;
     @Column(name = "role")
+    @Enumerated(value = EnumType.STRING)
     private ProfileRole role;
     @Enumerated(value = EnumType.STRING)
     @Column(name = "status")
